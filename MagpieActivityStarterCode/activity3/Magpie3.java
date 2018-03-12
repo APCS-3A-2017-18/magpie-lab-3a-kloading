@@ -51,6 +51,17 @@ public class Magpie3
 		}
 		return response;
 	}
+	
+	
+	/** 
+	 * 
+	 * @param dud
+	 * 
+	 * **/
+	
+	public void doNothing (int dud) {
+		//does nothing
+	}
 
 	/**
 	 * Search for one word in phrase. The search is not case
