@@ -52,7 +52,9 @@ public class Magpie4
 		else if (findKeyword(statement, "I want to", 0) >= 0)
 		{
 			response = transformIWantToStatement(statement);
-		}
+		} else if (findKeyword(statement, "I want", 0) >= 0) {
+   			response = transformIWantStatement(statement);
+  		}
 
 		else
 		{
@@ -67,8 +69,17 @@ public class Magpie4
 			}
 			else
 			{
-				response = getRandomResponse();
+			psn = findKeyword(statement, "i", 0);
+    			if (psn >= 0 && findKeyword(statement, "you", psn) >= 0)
+    			{
+     			    response = transformIYouStatement(statement);
+    			}
+			else
+			{
+		           response = getRandomResponse();
 			}
+			}
+		}
 		}
 		return response;
 	}
